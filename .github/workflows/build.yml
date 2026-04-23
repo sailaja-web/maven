@@ -9,14 +9,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v4
-
-      - name: Set up Java
-        uses: actions/setup-java@v4
-        with:
-          distribution: 'temurin'
-          java-version: '17'
+      - uses: actions/checkout@v4
 
       - name: Build with Maven
         run: mvn clean package
@@ -27,4 +20,12 @@ jobs:
           name: java-app
           path: target/*.jar
 
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
 
+    steps:
+      - name: Download artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: java-app
