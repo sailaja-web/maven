@@ -7,7 +7,7 @@ stage('ContinuousDownload')
         {
             steps
             {
-              git 'https://github.com/IntelliqDevops/maven.git'  
+              git 'https://github.com/sailaja-web/maven.git'  
             }
         }
 
