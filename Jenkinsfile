@@ -32,7 +32,7 @@ stage('ContinuousTesting')
         {
             steps
             {
-              git 'https://github.com/IntelliqDevops/FunctionalTesting.git'
+              git 'https://github.com/sailaja-web/FunctionalTesting.git'
               sh 'java -jar /var/lib/jenkins/workspace/DeclarativePipeline1/testing.jar'
             }
         }
